@@ -1,0 +1,18 @@
+# 忽略编译产物
+build/
+bin/
+
+# 忽略测试数据（视频文件通常太大，不纳入 Git 管理）
+data/
+*.mp4
+*.pcm
+*.yuv
+
+# 忽略隐藏的系统文件
+.vscode/
+*.swp
+
+# 忽略可执行文件（以防万一有漏网之鱼）
+server
+client
+epoll_server
