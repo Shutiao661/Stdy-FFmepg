@@ -44,3 +44,7 @@ add_executable(demux_demo src/demux_demo.cpp)
 # 链接 FFmpeg 库
 target_include_directories(demux_demo PRIVATE ${FFMPEG_INCLUDE_DIRS})
 target_link_libraries(demux_demo PRIVATE ${FFMPEG_LIBRARIES})
+
+add_executable(read_packet_demo src/read_packet_demo.cpp)
+target_include_directories(read_packet_demo PRIVATE ${FFMPEG_INCLUDE_DIRS})
+target_link_libraries(read_packet_demo PRIVATE ${FFMPEG_LIBRARIES})
