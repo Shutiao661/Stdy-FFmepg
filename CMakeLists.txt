@@ -33,3 +33,14 @@ add_executable(pcm_demo src/pcm_layout_demo.cpp)
 
 # --- 4. 编译 epoll 服务端（新增） ---
 add_executable(epoll_server src/epoll_server.cpp)
+
+# 寻找 FFmpeg 库
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(FFMPEG REQUIRED libavformat libavcodec libavutil)
+
+# 添加解封装的可执行文件
+add_executable(demux_demo src/demux_demo.cpp)
+
+# 链接 FFmpeg 库
+target_include_directories(demux_demo PRIVATE ${FFMPEG_INCLUDE_DIRS})
+target_link_libraries(demux_demo PRIVATE ${FFMPEG_LIBRARIES})
