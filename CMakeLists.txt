@@ -48,3 +48,7 @@ target_link_libraries(demux_demo PRIVATE ${FFMPEG_LIBRARIES})
 add_executable(read_packet_demo src/read_packet_demo.cpp)
 target_include_directories(read_packet_demo PRIVATE ${FFMPEG_INCLUDE_DIRS})
 target_link_libraries(read_packet_demo PRIVATE ${FFMPEG_LIBRARIES})
+
+add_executable(decode_video_demo src/decode_video_demo.cpp)
+target_include_directories(decode_video_demo PRIVATE ${FFMPEG_INCLUDE_DIRS})
+target_link_libraries(decode_video_demo PRIVATE ${FFMPEG_LIBRARIES})
