@@ -9,6 +9,14 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
+# 寻找 SDL2 库
+find_package(SDL2 REQUIRED)
+
+# 添加播放器程序
+add_executable(player_demo src/player_demo.cpp)
+target_include_directories(player_demo PRIVATE ${FFMPEG_INCLUDE_DIRS} ${SDL2_INCLUDE_DIRS})
+target_link_libraries(player_demo PRIVATE ${FFMPEG_LIBRARIES} ${SDL2_LIBRARIES})
+
 # 多线程库
 find_package(Threads REQUIRED)
 
@@ -42,3 +50,4 @@ target_link_libraries(decode_video_demo PRIVATE ${FFMPEG_LIBRARIES})
 add_executable(decode_audio_demo src/decode_audio_demo.cpp)
 target_include_directories(decode_audio_demo PRIVATE ${FFMPEG_INCLUDE_DIRS})
 target_link_libraries(decode_audio_demo PRIVATE ${FFMPEG_LIBRARIES})
+
